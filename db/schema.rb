@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20161123100557) do
     t.string   "name"
     t.string   "author"
     t.string   "publisher"
-    t.string   "image"
-    t.string   "bookpdf"
+    t.text     "image"
+    t.text     "bookpdf"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

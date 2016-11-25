@@ -20,7 +20,9 @@
         <td><%= book.name %></td>
         <td><%= book.author %></td>
         <td><%= book.publisher %></td>
-        <td><%= book.image %></td>
+        <td><% if book.image? %>
+            <%= image_tag book.image.url %>
+            <% end %></td>
         <td><%= book.bookpdf %></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
