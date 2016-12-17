@@ -22,3 +22,5 @@
 
 # Upload file
 /public/uploads
+
+.DS_Store
