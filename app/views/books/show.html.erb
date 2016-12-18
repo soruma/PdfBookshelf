@@ -17,12 +17,14 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @book.image %>
+  <% if @book.image? %>
+    <%= link_to image_tag(@book.image.thumb), @book.image.url %>
+  <% end %>
 </p>
 
 <p>
   <strong>Bookpdf:</strong>
-  <%= @book.bookpdf %>
+  <%= link_to "Download", @book.bookpdf.url %>
 </p>
 
 <%= link_to 'Edit', edit_book_path(@book) %> |
