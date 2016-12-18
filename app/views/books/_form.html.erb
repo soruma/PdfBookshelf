@@ -29,11 +29,21 @@
   <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
+    <div class="old field">
+      <% if book.image? %>
+        <%= image_tag book.image.thumb, :size => "45x45" %>
+      <% end %>
+    </div>
   </div>
 
   <div class="field">
     <%= f.label :bookpdf %>
     <%= f.file_field :bookpdf %>
+    <div class="old field">
+      <% if book.bookpdf? %>
+        <%= link_to "Book PDF Show", book.bookpdf.url %>
+      <% end %>
+    </div>
   </div>
 
   <div class="actions">
