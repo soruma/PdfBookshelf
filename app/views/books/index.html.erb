@@ -21,9 +21,9 @@
         <td><%= book.author %></td>
         <td><%= book.publisher %></td>
         <td><% if book.image? %>
-            <%= image_tag book.image.url %>
+            <%= link_to image_tag(book.image.thumb), book.image.url %>
             <% end %></td>
-        <td><%= book.bookpdf %></td>
+        <td><%= book.bookpdf %></a></td>
         <td><%= link_to 'Show', book %></td>
         <td><%= link_to 'Edit', edit_book_path(book) %></td>
         <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
