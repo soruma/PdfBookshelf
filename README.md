@@ -22,3 +22,6 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+# 参考URL
+[Rails4 + devise + cancancan + rails_adminが最強すぎ] (http://d.hatena.ne.jp/htz/20140718/1405690417)
