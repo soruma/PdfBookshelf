@@ -1,15 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
 one:
   title: 1stBook
   author: MyString
   publisher: MyString
-  image: MyString
-  bookpdf: MyString
+  image: image.jpg
+  bookpdf: bookpdf.pdf
 
 two:
   title: 2ndBook
   author: MyString
   publisher: MyString
-  image: MyString
-  bookpdf: MyString
+  image: image.jpg
+  bookpdf: bookpdf.pdf
