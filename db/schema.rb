@@ -13,7 +13,7 @@
 ActiveRecord::Schema.define(version: 20170101010613) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
+    t.string   "title"
     t.string   "author"
     t.string   "publisher"
     t.text     "image",      limit: 65535
