@@ -18,3 +18,7 @@ User.create(:email => 'superadmin@ex.com',
             :password => 'adminadmin',
             :password_confirmation => 'adminadmin',
             :roles => [ admin, superadmin ])
+
+User.create(:email => 'user@ex.com',
+            :password => 'useruser',
+            :password_confirmation => 'useruser')
