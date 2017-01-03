@@ -1,5 +1,8 @@
 <h1>Rental</h1>
-<%= link_to "show cart", "rental/show" %>
+<div>
+  <%= link_to "show cart", rental_show_path %>
+  | size: <%= rental_books ? rental_books.size : 0 %>
+</div>
 
 <% @books.each do |book| %>
   <h2><%= book.title%></h2>
@@ -16,6 +19,6 @@
     <strong>Publisher</strong>
     <%= book.publisher %>
   </div>
-  <%= link_to "add cart", addcart_path(book.id) %>
+  <%= link_to "add cart", rental_addcart_path(book) %>
   <hr />
 <% end %>

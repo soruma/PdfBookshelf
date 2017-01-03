@@ -1,2 +1,25 @@
 <h1>Rental#show</h1>
-<p>Find me in app/views/rental/show.html.erb</p>
+<%= link_to 'return rental', rental_path %>
+
+<p>
+  <%= "cart is empty." if rental_books.size == 0 %>
+</p>
+
+<% @books.each do |book| %>
+  <h2><%= book.title%></h2>
+  <% if book.image? %>
+    <%= link_to image_tag(book.image.thumb), book.image.url %>
+  <% else %>
+    <%= link_to image_tag('Image-not-found.gif') %>
+  <% end %>
+  <div class="field">
+    <strong>Author</strong>
+    <%= book.author %>
+  </div>
+  <div class="field">
+    <strong>Publisher</strong>
+    <%= book.publisher %>
+  </div>
+  <%= link_to 'destroy this', rental_destroy_path(book), data: { confirm: 'Are you sure?' } %>
+  <hr />
+<% end %>
