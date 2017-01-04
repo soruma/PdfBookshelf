@@ -1,4 +1,6 @@
 class RentalController < ApplicationController
+  load_and_authorize_resource
+
   def addcart
     @book = Book.find(params[:id])
 
