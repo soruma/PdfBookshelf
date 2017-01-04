@@ -9,11 +9,8 @@
   </head>
 
   <body>
-    <% if notice %>
-      <p id="notice" class="alert alert-notice"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p id="error" class="alert alert-error"><%= alert %></p>
+    <% flash.each do |key, value| %>
+      <%= content_tag :div, value, id: "#{key}" %>
     <% end %>
 
     <% if user_signed_in? %>
@@ -24,6 +21,7 @@
       <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link' %> |
       <%= link_to "Login", new_user_session_path, :class => 'navbar-link' %>
     <% end %>
+
     <%= yield %>
   </body>
 </html>
