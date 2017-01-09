@@ -1,7 +1,9 @@
 <h1>Rental</h1>
 <div>
   <%= link_to "show cart", rental_show_path %>
-  | size: <%= rental_books ? rental_books.size : 0 %>
+  <%= link_to_if rental_books.size != 0, "let's rental",
+        rental_lets_rental_path do end %>
+  size: <%= rental_books ? rental_books.size : 0 %>
 </div>
 
 <% @books.each do |book| %>

@@ -17,7 +17,7 @@ Rails.application.routes.draw do
   get 'rental/:id/addcart', to: 'rental#addcart', as: 'rental_addcart'
   get 'rental/create'
   get 'rental/:id/destroy', to: 'rental#destroy', as: 'rental_destroy'
-  get 'rental/lets-rental', to: 'rental#lets_rental'
+  get 'rental/lets-rental', to: 'rental#lets_rental', as: 'rental_lets_rental'
   get 'rental/show'
 
   # admnin
