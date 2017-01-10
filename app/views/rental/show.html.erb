@@ -1,9 +1,9 @@
 <h1>Rental#show</h1>
 <%= link_to 'return to rental', rental_path %>
-<%= link_to_if rental_books.size != 0, "let's rental",
+<%= link_to_if books.size != 0, "let's rental",
       rental_lets_rental_path do end %>
 
-<%= content_tag :p, "cart is empty." if rental_books.size == 0 %>
+<%= content_tag :p, "cart is empty." if books.size == 0 %>
 
 <% @books.each do |book| %>
   <h2><%= book.title%></h2>

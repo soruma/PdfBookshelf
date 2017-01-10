@@ -1,17 +1,15 @@
 class RentalController < ApplicationController
   def addcart
-    @book = Book.find(params[:id])
+    @book = Book.find params[:id]
 
-    helpers.add_rental_books @book.id
+    helpers.add @book.id
   end
 
   def create
   end
 
   def destroy
-    arr = helpers.rental_books
-    arr.delete(params[:id])
-    helpers.rental_books = arr
+    helpers.delete params[:id]
     redirect_to rental_show_path
   end
 
@@ -20,15 +18,11 @@ class RentalController < ApplicationController
   end
 
   def lets_rental
-    rental_books = helpers.rental_books
-    redirect_to rental_show_path if rental_books.size == 0
+    redirect_to rental_show_path if helpers.books.size == 0
   end
 
   def show
-    @books = Array.new
-    helpers.rental_books.each do |id|
-      @books << Book.find(id)
-    end
+    @books = helpers.books.inject([]) { |books, id| books << Book.find(id) }
   end
 
 end
