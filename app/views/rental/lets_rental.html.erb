@@ -1,2 +1,26 @@
 <h1>Rental#lets_rental</h1>
-<p>Find me in app/views/rental/lets_rental.html.erb</p>
+<%= link_to 'return to rental', rental_path %>
+
+<%= content_tag :p, "cart is empty." if book_ids.size == 0 %>
+
+<%= link_to 'confirmation rental', rental_create_path %>
+
+<div>
+<% @books.each do |book| %>
+  <h2><%= book.title%></h2>
+  <% if book.image? %>
+    <%= link_to image_tag(book.image.thumb), book.image.url %>
+  <% else %>
+    <%= link_to image_tag('Image-not-found.gif') %>
+  <% end %>
+  <div class="field">
+    <strong>Author</strong>
+    <%= book.author %>
+  </div>
+  <div class="field">
+    <strong>Publisher</strong>
+    <%= book.publisher %>
+  </div>
+  <hr />
+<% end %>
+</div>

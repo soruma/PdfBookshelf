@@ -6,7 +6,7 @@
 <%= content_tag :p, "cart is empty." if book_ids.size == 0 %>
 
 <% @books.each do |book| %>
-  <h2><%= book.title%></h2>
+  <h2><%= book.title %></h2>
   <% if book.image? %>
     <%= link_to image_tag(book.image.thumb), book.image.url %>
   <% else %>

@@ -19,10 +19,15 @@ class RentalController < ApplicationController
 
   def lets_rental
     redirect_to rental_show_path if helpers.book_ids.size == 0
+    @books = books
   end
 
   def show
-    @books = helpers.books.inject([]) { |books, id| books << Book.find(id) }
+    @books = books
   end
 
+  private
+  def books
+    Book.where(id: helpers.book_ids)
+  end
 end
