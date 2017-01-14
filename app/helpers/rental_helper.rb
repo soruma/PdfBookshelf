@@ -1,23 +1,23 @@
 module RentalHelper
-  def rental_books_id
-    session[:rental_books_id]
+  def rental_book_ids
+    session[:rental_book_ids]
   end
 
-  def rental_books_id=(value)
-    session[:rental_books_id] = value
+  def rental_book_ids=(value)
+    session[:rental_book_ids] = value
   end
 
-  def books
-    rental_books_id.nil? ? Array.new : rental_books_id.split("&").uniq
+  def book_ids
+    rental_book_ids.nil? ? Array.new : rental_book_ids.split("&").uniq
   end
 
   def add(val)
-    self.rental_books_id = books << val
+    self.rental_book_ids = book_ids << val
   end
 
   def delete(val)
-    arr = books
+    arr = book_ids
     arr.delete(val)
-    self.rental_books_id = arr
+    self.rental_book_ids = arr
   end
 end

@@ -18,7 +18,7 @@ class RentalController < ApplicationController
   end
 
   def lets_rental
-    redirect_to rental_show_path if helpers.books.size == 0
+    redirect_to rental_show_path if helpers.book_ids.size == 0
   end
 
   def show
