@@ -1,16 +1,23 @@
 module RentalHelper
+  def rental_books_id
+    session[:rental_books_id]
+  end
+
+  def rental_books_id=(value)
+    session[:rental_books_id] = value
+  end
+
   def books
-    arr = cookies[:rental_books_id]
-    arr.nil? ? Array.new : arr.split("&").uniq
+    rental_books_id.nil? ? Array.new : rental_books_id.split("&").uniq
   end
 
   def add(val)
-    cookies[:rental_books_id] = books << val
+    self.rental_books_id = books << val
   end
 
   def delete(val)
     arr = books
     arr.delete(val)
-    cookies[:rental_books_id] = arr
+    self.rental_books_id = arr
   end
 end
