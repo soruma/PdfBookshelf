@@ -3,7 +3,7 @@
 
 <%= content_tag :p, "cart is empty." if book_ids.size == 0 %>
 
-<%= link_to 'confirmation rental', rental_create_path %>
+<%= link_to 'confirmation rental', rental_confirmation_path %>
 
 <div>
 <% @books.each do |book| %>

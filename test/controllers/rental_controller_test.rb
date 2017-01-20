@@ -6,8 +6,8 @@ class RentalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should get create" do
-    get rental_create_url
+  test "should get confirmation" do
+    get rental_confirmation_url
     assert_response :success
   end
 
