@@ -3,12 +3,12 @@ one:
   title: 1stBook
   author: MyString
   publisher: MyString
-  image: image.jpg
-  bookpdf: bookpdf.pdf
+  image: files/uploads/image.jpg
+  bookpdf: files/uploads/bookpdf.pdf
 
 two:
   title: 2ndBook
   author: MyString
   publisher: MyString
-  image: image.jpg
-  bookpdf: bookpdf.pdf
+  image: files/uploads/image.jpg
+  bookpdf: files/uploads/bookpdf.pdf

@@ -10,7 +10,6 @@ class ActiveSupport::TestCase
 
   # Not storing uploads in the tests
   CarrierWave::Mount::Mounter.class_eval { def store!; end }
-  CarrierWave.root = Rails.root.join('test/fixtures/files/uploads')
 
   # Add more helper methods to be used by all tests here...
   def after_teardown
