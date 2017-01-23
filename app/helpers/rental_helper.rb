@@ -8,7 +8,7 @@ module RentalHelper
   end
 
   def book_ids
-    rental_book_ids.nil? ? Array.new : rental_book_ids.split("&").uniq
+    rental_book_ids.nil? ? Array.new : rental_book_ids.uniq
   end
 
   def add(val)
@@ -16,8 +16,8 @@ module RentalHelper
   end
 
   def delete(val)
-    arr = book_ids
-    arr.delete(val)
+    arr = rental_book_ids
+    arr.delete(val.to_i)
     self.rental_book_ids = arr
   end
 end
