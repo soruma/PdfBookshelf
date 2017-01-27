@@ -4,5 +4,6 @@ class Book < ApplicationRecord
   mount_uploader :image, ImageUploader
   mount_uploader :bookpdf, PdfUploader
 
+  validates :title, presence: true
   validates :bookpdf, presence: true
 end
