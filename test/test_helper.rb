@@ -8,9 +8,6 @@ class ActiveSupport::TestCase
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
-  # Not storing uploads in the tests
-  CarrierWave::Mount::Mounter.class_eval { def store!; end }
-
   # Add more helper methods to be used by all tests here...
   def after_teardown
     super

@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RentalControllerTest < ActionDispatch::IntegrationTest
   test "should get addcart" do
-    get rental_addcart_url
+    get rental_show_url
     assert_response :success
   end
 
@@ -11,18 +11,23 @@ class RentalControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get create" do
+    get rental_url
+    assert_response :success
+  end
+
   test "should get destroy" do
-    get rental_destroy_url
+    get rental_show_url
     assert_response :success
   end
 
   test "should get index" do
-    get rental_index_url
+    get rental_url
     assert_response :success
   end
 
   test "should get lets_rental" do
-    get rental_lets_rental_url
+    get rental_show_url
     assert_response :success
   end
 
@@ -30,5 +35,4 @@ class RentalControllerTest < ActionDispatch::IntegrationTest
     get rental_show_url
     assert_response :success
   end
-
 end

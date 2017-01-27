@@ -3,6 +3,8 @@ require 'test_helper'
 class BooksControllerTest < ActionDispatch::IntegrationTest
   setup do
     @book = books(:one)
+    @image = fixture_file_upload(@book.image.file.path, 'image/jpeg', true)
+    @bookpdf = fixture_file_upload(@book.bookpdf.file.path, 'application/pdf', true)
   end
 
   test "should get index" do
@@ -17,7 +19,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
 
   test "should create book" do
     assert_difference('Book.count') do
-      post books_url, params: { book: { author: @book.author, bookpdf: @book.bookpdf, image: @book.image, publisher: @book.publisher, title: @book.title } }
+      post books_url, params: { book: { author: @book.author, bookpdf: @bookpdf, image: @image, publisher: @book.publisher, title: @book.title } }
     end
 
     assert_redirected_to book_url(Book.last)
@@ -34,7 +36,7 @@ class BooksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update book" do
-    patch book_url(@book), params: { book: { author: @book.author, bookpdf: @book.bookpdf, image: @book.image, publisher: @book.publisher, title: @book.title } }
+    patch book_url(@book), params: { book: { author: @book.author, bookpdf: @bookpdf, image: @image, publisher: @book.publisher, title: @book.title } }
     assert_redirected_to book_url(@book)
   end
 
