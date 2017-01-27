@@ -1,2 +1,6 @@
 <h1>Rental#confirmation</h1>
-<p>Find me in app/views/rental/confirmation.html.erb</p>
+
+<p>
+  Do you borrow <%= book_ids.size %> books for <%= rental_days %> days?
+</p>
+<%= link_to 'Confirm', rental_create_path %>

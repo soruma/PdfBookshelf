@@ -5,6 +5,9 @@ class RentalController < ApplicationController
     helpers.add @book.id
   end
 
+  def confirmation
+  end
+
   def create
   end
 

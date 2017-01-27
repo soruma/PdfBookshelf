@@ -20,4 +20,8 @@ module RentalHelper
     arr.delete(val.to_i)
     self.rental_book_ids = arr
   end
+
+  def destroy
+    self.rental_book_ids = nil
+  end
 end
